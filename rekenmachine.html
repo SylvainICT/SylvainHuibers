@@ -1,86 +1,103 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="rekenmachine.css">
-    <title>SylvainHuibers</title>
+    <title>Rekenmachine</title>
 </head>
 <body>
     <header>
-        <h1>Sylvain Huibers</h1>
+        <h1>Rekenmachine</h1>
         <img src="sylvain (3)k.PNG" alt="Logo" class="logo">
-
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Over.html">Over</a></li>
-                <li><a href="Contact.html">contact</a></li>
+                <li><a href="Contact.html">Contact</a></li>
                 <li><a href="rekenmachine.html">Rekenmachine</a></li>
             </ul>
         </nav>
-
-    
-            </div>
-        </div>
     </header>
-
     <main>
         <!-- Muziekspeler sectie boven de rekenmachine -->
-        <section id="music-player-section">
-            <h2>Muziekspeler</h2>
+        <section class="music-player">
+            <h2>Luister naar muziek</h2>
             <audio id="audioPlayer" controls>
-                <source src="CPR  Cupcakke Lyrics.mp3" type="audio/mp3">
-                Je browser ondersteunt deze audio niet.
+                <source src="jouw-muziekbestand.mp3" type="audio/mp3">
+                Je browser ondersteunt geen audio-element.
             </audio>
         </section>
 
-        <section id="calculator-section">
-            <h2>Rekenmachine</h2>
-            <div class="calculator">
-                <input type="text" id="result" disabled>
-                <div class="buttons">
-                    <button onclick="clearResult()">C</button>
-                    <button onclick="appendToResult('1')">1</button>
-                    <button onclick="appendToResult('2')">2</button>
-                    <button onclick="appendToResult('3')">3</button>
-                    <button onclick="appendToResult('+')">+</button>
-                    <button onclick="appendToResult('4')">4</button>
-                    <button onclick="appendToResult('5')">5</button>
-                    <button onclick="appendToResult('6')">6</button>
-                    <button onclick="appendToResult('-')">-</button>
-                    <button onclick="appendToResult('7')">7</button>
-                    <button onclick="appendToResult('8')">8</button>
-                    <button onclick="appendToResult('9')">9</button>
-                    <button onclick="appendToResult('*')">*</button>
-                    <button onclick="appendToResult('0')">0</button>
-                    <button onclick="calculateResult()">=</button>
-                    <button onclick="appendToResult('/')">/</button>
-                </div>
+        <!-- Rekenmachine sectie -->
+        <section class="calculator">
+            <input type="text" id="display" readonly>
+            <div>
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+            </div>
+            <div>
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+            </div>
+            <div>
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+            </div>
+            <div>
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="calculateResult()">=</button>
+            </div>
+            <div>
+                <button onclick="setOperator('+')">+</button>
+                <button onclick="setOperator('-')">-</button>
+                <button onclick="setOperator('*')">x</button>
+                <button onclick="setOperator('/')">÷</button>
             </div>
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2025 Mijn Website</p>
+        <p>&copy; 2025 SylvainHuibers</p>
     </footer>
-
     <script>
-        function appendToResult(value) {
-            document.getElementById('result').value += value;
+        let currentInput = '';
+        let operator = null;
+        let previousInput = '';
+
+        function appendNumber(number) {
+            currentInput += number;
+            updateDisplay();
         }
 
-        function clearResult() {
-            document.getElementById('result').value = '';
+        function setOperator(op) {
+            if (currentInput === '') return;
+            operator = op;
+            previousInput = currentInput;
+            currentInput = '';
         }
 
         function calculateResult() {
-            const resultField = document.getElementById('result');
-            try {
-                resultField.value = eval(resultField.value);
-            } catch {
-                resultField.value = 'Error';
-            }
+            if (!previousInput || !currentInput || !operator) return;
+            const result = eval(`${previousInput} ${operator} ${currentInput}`);
+            currentInput = result.toString();
+            operator = null;
+            previousInput = '';
+            updateDisplay();
+        }
+
+        function clearDisplay() {
+            currentInput = '';
+            operator = null;
+            previousInput = '';
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById('display').value = currentInput;
         }
     </script>
 </body>

@@ -116,3 +116,91 @@ button:nth-child(4n) {
 button:nth-child(4n):hover {
     background-color: #218838; /* Donkerder groen bij hover */
 }
+
+
+
+
+.over-container {
+    display: flex;
+    flex-wrap: wrap; /* Voor responsiviteit */
+    align-items: center;
+    gap: 20px;
+}
+
+.over-tekst {
+    flex: 1; /* Zorgt dat de tekst meer ruimte krijgt */
+    min-width: 250px; /* Voorkomt dat het te smal wordt */
+}
+
+.over-foto {
+    flex: 1;
+    text-align: center; /* Centraal uitlijnen van de foto */
+}
+
+.over-foto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Maakt de foto wat zachter qua uiterlijk */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .over-container {
+        flex-direction: column; /* Zet tekst en foto onder elkaar op kleine schermen */
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px; /* Maak de tekst groter voor leesbaarheid */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Zet de navigatie-items onder elkaar */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Ruimte tussen de menu-items */
+    }
+
+    .over-container {
+        flex-direction: column; /* Plaats tekst en foto onder elkaar */
+    }
+
+    .over-foto img {
+        width: 80%; /* Zorg dat de foto kleiner wordt */
+        margin: 0 auto; /* Centreer de foto */
+    }
+
+    header {
+        text-align: center; /* Zorg dat de header beter past */
+        padding: 10px;
+    }
+
+    .logo {
+        position: static; /* Zorg dat het logo zich aanpast */
+        margin: 10px auto;
+        display: block;
+    }
+
+    footer {
+        font-size: 14px; /* Maak de tekst in de footer iets kleiner */
+    }
+}
+
+.music-player {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+audio {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
