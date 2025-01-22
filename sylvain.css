@@ -4,11 +4,12 @@
 
 @media (max-width: 600px) {
     .logo {
-        display: block;
-        margin: 10px 0;
-        width: 15px;
+        width: 100px; /* Kleinere grootte voor mobiele apparaten */
+        left: 5px; /* Iets meer ruimte aan de zijkant */
+        top: 5px; /* Iets kleinere ruimte van de bovenkant */
     }
 }
+
 
 body {
     font-family: Arial, sans-serif;
