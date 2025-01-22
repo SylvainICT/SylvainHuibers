@@ -109,3 +109,45 @@ footer {
         margin: 10px 0;
     }
 }
+
+
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px; /* Maak de tekst groter voor leesbaarheid */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Zet de navigatie-items onder elkaar */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Ruimte tussen de menu-items */
+    }
+
+    .over-container {
+        flex-direction: column; /* Plaats tekst en foto onder elkaar */
+    }
+
+    .over-foto img {
+        width: 80%; /* Zorg dat de foto kleiner wordt */
+        margin: 0 auto; /* Centreer de foto */
+    }
+
+    header {
+        text-align: center; /* Zorg dat de header beter past */
+        padding: 10px;
+    }
+
+    .logo {
+        position: static; /* Zorg dat het logo zich aanpast */
+        margin: 10px auto;
+        display: block;
+    }
+
+    footer {
+        font-size: 14px; /* Maak de tekst in de footer iets kleiner */
+    }
+}
