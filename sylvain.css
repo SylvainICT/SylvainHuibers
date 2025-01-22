@@ -3,7 +3,7 @@
 }
 
 @media (max-width: 600px) {
-    nav ul li {
+    header {
         display: block;
         margin: 10px 0;
     }
