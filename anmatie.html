@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introductie</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .intro-container {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s forwards, slideUp 2s ease-in-out;
+        }
+
+        .intro-container img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #333;
+            animation: fadeInText 2s ease-out forwards;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 20px;
+            animation: fadeInText 2s ease-out forwards;
+            animation-delay: 1s; /* Laat de paragraaf later verschijnen */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="intro-container">
+        <!-- Voeg hier je foto toe -->
+        <img src="sylvain (3)k.PNG" alt="Jouw Foto">
+        <h1>Hallo, ik ben Sylvain Huibers</h1>
+        <p>Ik ben een webontwikkelaar en Ondernemer.</p>
+    </div>
+
+    <script>
+         // Functie die de gebruiker naar de homepagina stuurt na 5 seconden
+         window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "index.html"; // Hier de URL van je homepage plaatsen
+            }, 3000); // 5000 milliseconden = 5 seconden
+        }
+    </script>
+
+</body>
+</html>
