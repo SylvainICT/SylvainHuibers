@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
