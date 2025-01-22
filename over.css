@@ -165,7 +165,7 @@ section {
     align-items: center; /* Zorgt dat tekst en afbeelding op dezelfde hoogte staan */
 }
 section img {
-    width: 50px;
+    width: 80px;
     height: auto;
     margin-right: 20px;
 }
