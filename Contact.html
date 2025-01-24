@@ -3,31 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactpagina</title>
-    <link rel="stylesheet" href="contact.css">
+    <title>Contact</title>
+
 </head>
 <body>
- 
-
     <header>
-        <h1>Sylvain Huibers</h1>
+        <h1>Contact</h1>
         <img src="sylvain (3)k.PNG" alt="Logo" class="logo">
-
         <nav>
             <ul>
-                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="Over.html">Over</a></li>
-                <li><a href="Contact.html">contact</a></li>
+                <li><a href="Contact.html">Contact</a></li>
                 <li><a href="rekenmachine.html">Rekenmachine</a></li>
             </ul>
         </nav>
     </header>
-    <main> 
-        <h1> pagina in bewerking </h1> 
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 150px;
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Over</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="contact-form">
+            <h2>Neem contact met ons op</h2>
+            <form action="https://formspree.io/f/mldgevzp" method="post">
+                <div class="form-group">
+                    <label for="name">Naam</label>
+                    <input type="text" id="name" name="name" placeholder="Uw naam" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" placeholder="Uw e-mailadres" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Bericht</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Uw bericht" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Verzenden</button>
+                </div>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Bedrijfnaam. Alle rechten voorbehouden.</p>
+        <p>&copy; 2025 Mijn Website. Alle rechten voorbehouden.</p>
     </footer>
 </body>
 </html>
